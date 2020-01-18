@@ -11,7 +11,7 @@ router.get("/", function(req, res) {
     var hbsObject = {
       cats: data
     };
-    console.log(hbsObject);
+    // console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
@@ -30,7 +30,7 @@ router.post("/api/cats", function(req, res) {
 router.put("/api/cats/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
-  console.log("condition", condition);
+  // console.log("condition", condition);
 
   cat.update({
     sleepy: req.body.sleepy
