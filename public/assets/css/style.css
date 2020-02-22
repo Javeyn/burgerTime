@@ -17,3 +17,15 @@ li {
 .form-group {
   margin-bottom: 5px;
 }
+
+.container {
+  background-color: black;
+}
+
+.jumbotron {
+  background-color: black;
+}
+
+.title {
+  font-size: 74px;
+}

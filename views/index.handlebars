@@ -1,38 +1,52 @@
-<h1>Grand List O' Burgers!</h1>
+  
+<div class="container">
+  <div class="jumbotron">
+    <div class="row justify-content-center">
+      <span class="h1 title"><center> Delicous Burgers </center></span>
+    </div>
+    <div class="row justify-content-center">
+    <img src="./assets/css/images/Burger.jpg" alt="burger" height="auto" width="400">
+    </div>
+    <div class="row">
+      <div class="col-6 burger-list">
+        <h5 class="card-title">Let's eat this suckers</h5>
+        <div>
+          {{#each dbBurger}}
+          {{#unless eaten}}
+          {{> burgers/burger-block eaten=true}}
+          {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-6 burger-list">
+        <h5 class="card-title">Shall we have another?</h5>
+        <ul>
+          {{#each dbBurger}}
+          {{#if eaten}}
+          {{> burgers/burger-block eaten=false}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
 
-<h2>Burgers that you need to eat!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that you need to eat...again!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+    <div class="row justify-content-center">
+        <div class="col-4">
+          <h1 class="display-4">Add a Burger</h1>
+          <form class="create-form">
+            <div class="form-group">
+              <label for="ca">Burger Name:</label>
+              <input type="text" id="ca" name="name">
+            </div>
+            <div class="form-group">
+              <label for="eaten">Have you eaten this burger?</label><br>
+              <input type="radio" name="eaten" value="0" checked> Eat me!
+              <input type="radio" name="eaten" value="1"> You ate it!<br>
+            </div>
+            <button type="submit">Add Burger</button>
+          </form>
+        </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <label for="slee">Did you eat it yet?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Devoured<br>
-    <input type="radio" name="sleepy" value="0"> Non-Devoured
-  </div>
-
-  <button type="submit">Add a Burger</button>
-</form>
+</div>
+    
